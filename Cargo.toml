@@ -1,0 +1,10 @@
+[package]
+name = "byte_arithmetic"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+itertools = "*"
+
+[dev-dependencies]
+sha3 = "0.10.1"
