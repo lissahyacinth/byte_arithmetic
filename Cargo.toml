@@ -1,10 +1,12 @@
 [package]
 name = "byte_arithmetic"
-version = "0.2.0"
+version = "0.2.1"
 edition = "2021"
 description = "Implementation of simple arithmetic on byte-like objects"
-license-file = "LICENSE"
+license = "unlicense"
 exclude = [".idea/*"]
+readme = "README.md"
+documentation = "https://github.com/lissahyacinth/byte_arithmetic"
 
 [dependencies]
 itertools = "0.10"
