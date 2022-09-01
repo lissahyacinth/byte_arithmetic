@@ -2,6 +2,9 @@
 name = "byte_arithmetic"
 version = "0.2.0"
 edition = "2021"
+description = "Implementation of simple arithmetic on byte-like objects"
+license-file = "LICENSE"
+
 
 [dependencies]
 itertools = "*"
