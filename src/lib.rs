@@ -1,6 +1,23 @@
 use itertools::{EitherOrBoth, Itertools};
 use std::ops::BitXor;
 
+/// Base256 Object
+///
+/// Vec<u8> object that implements a subset of basic arithmetic, namely addition and integer
+/// multiplication.
+///
+/// Multiplication is implemented as multiplicative addition.
+/// ```
+/// use byte_arithmetic::Base256;
+/// assert_eq!(
+///     Base256::new(vec![1,2,3]) + Base256::new(vec![1,2,3]),
+///     Base256::new(vec![2,4,6])
+/// );
+/// assert_eq!(
+///     Base256::new(vec![1,2,3]) * 3,
+///     Base256::new(vec![3,6,9])
+/// );
+/// ```
 #[derive(PartialEq, Ord, PartialOrd, Eq, Debug, Clone, Hash)]
 pub struct Base256 {
     inner: Vec<u8>,
@@ -14,9 +31,9 @@ impl std::ops::Deref for Base256 {
     }
 }
 
-impl Into<Vec<u8>> for Base256 {
-    fn into(self) -> Vec<u8> {
-        self.inner
+impl From<Base256> for Vec<u8> {
+    fn from(base256: Base256) -> Self {
+        base256.inner
     }
 }
 
