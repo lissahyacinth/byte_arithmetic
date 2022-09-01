@@ -7,7 +7,4 @@ license-file = "LICENSE"
 exclude = [".idea/*"]
 
 [dependencies]
-itertools = "*"
-
-[dev-dependencies]
-sha3 = "0.10.1"
+itertools = "0.10"

@@ -76,6 +76,14 @@ impl BitXor for Base256 {
     }
 }
 
+impl std::ops::Mul<u8> for Base256 {
+    type Output = Base256;
+
+    fn mul(self, rhs: u8) -> Self::Output {
+        self.scalar_multiply(rhs)
+    }
+}
+
 impl std::ops::Add for Base256 {
     type Output = Base256;
 
