@@ -1,6 +1,6 @@
 [package]
 name = "byte_arithmetic"
-version = "0.2.1"
+version = "0.2.2"
 edition = "2021"
 description = "Implementation of simple arithmetic on byte-like objects"
 license = "Unlicense"
@@ -10,3 +10,4 @@ documentation = "https://github.com/lissahyacinth/byte_arithmetic"
 
 [dependencies]
 itertools = "0.10"
+serde = {version="1.0.145", features=["derive"]}

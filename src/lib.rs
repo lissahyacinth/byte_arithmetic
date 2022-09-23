@@ -1,5 +1,6 @@
 use itertools::{EitherOrBoth, Itertools};
 use std::ops::BitXor;
+use serde::{Deserialize, Serialize};
 
 /// Base256 Object
 ///
@@ -18,7 +19,7 @@ use std::ops::BitXor;
 ///     Base256::new(vec![3,6,9])
 /// );
 /// ```
-#[derive(PartialEq, Ord, PartialOrd, Eq, Debug, Clone, Hash)]
+#[derive(PartialEq, Ord, PartialOrd, Eq, Debug, Clone, Hash, Serialize, Deserialize)]
 pub struct Base256 {
     inner: Vec<u8>,
 }
