@@ -6,7 +6,7 @@ description = "Implementation of simple arithmetic on byte-like objects"
 license = "Unlicense"
 exclude = [".idea/*"]
 readme = "README.md"
-documentation = "https://github.com/lissahyacinth/byte_arithmetic"
+documentation = "https://gitlab.com/shareableai/byte_arithmetic"
 
 [dependencies]
 itertools = "0.10"
