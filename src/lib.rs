@@ -70,6 +70,14 @@ impl Base256 {
         res
     }
 
+    pub fn wrapped_scalar_multiply(self, value: u8, byte_length: usize) -> Self {
+        let mut res = Base256::new(vec![0]);
+        for _ in 0..value {
+            res = res.wrapped_add(self.clone(), byte_length);
+        }
+        res
+    }
+
     pub fn wrapped_add(self, other: Self, byte_length: usize) -> Self {
         let mut res = self + other;
         let inner_len = res.inner.len();
@@ -276,6 +284,15 @@ mod tests {
             Base256::new(vec![3, 3, 3])
         );
     }
+
+    #[test]
+    fn test_scalar_wrapped_mult() {
+        assert_eq!(
+            Base256::new(vec![1, 1, 1]).wrapped_scalar_multiply(40, 3),
+            Base256::new(vec![40, 40, 40])
+        );
+    }
+
 
     #[test]
     fn test_wrapped_addition() {
